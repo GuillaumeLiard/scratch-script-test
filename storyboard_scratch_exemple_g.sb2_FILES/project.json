@@ -1,0 +1,208 @@
+{
+	"objName": "Stage",
+	"sounds": [{
+			"soundName": "pop",
+			"soundID": 1,
+			"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+			"sampleCount": 258,
+			"rate": 11025,
+			"format": ""
+		}],
+	"costumes": [{
+			"costumeName": "backdrop1",
+			"baseLayerID": 9,
+			"baseLayerMD5": "739b5e2a2435f6e1ec2993791b423146.png",
+			"bitmapResolution": 1,
+			"rotationCenterX": 240,
+			"rotationCenterY": 180
+		}],
+	"currentCostumeIndex": 0,
+	"penLayerMD5": "5c81a336fab8be57adc039a8a2b33ca9.png",
+	"penLayerID": 0,
+	"tempoBPM": 60,
+	"videoAlpha": 0.5,
+	"children": [{
+			"objName": "A",
+			"scripts": [[482,
+					89,
+					[["procDef", "Faire Choix", [], [], false],
+						["doAsk", "Que fais-tu ?"],
+						["doIf", ["=", ["answer"], "1"], [["broadcast:", "B"], ["hide"]]],
+						["doIf", ["=", ["answer"], "2"], [["broadcast:", "C"], ["hide"]]]]],
+				[53,
+					40,
+					[["whenGreenFlag"],
+						["show"],
+						["lookLike:", "plan1"],
+						["wait:elapsed:from:", 1],
+						["lookLike:", "plan2"],
+						["wait:elapsed:from:", 1],
+						["lookLike:", "plan3"],
+						["wait:elapsed:from:", 1],
+						["lookLike:", "plan4"],
+						["call", "Faire Choix"]]]],
+			"sounds": [{
+					"soundName": "meow",
+					"soundID": 0,
+					"md5": "83c36d806dc92327b9e7049a565c6bff.wav",
+					"sampleCount": 18688,
+					"rate": 22050,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "plan1",
+					"baseLayerID": 1,
+					"baseLayerMD5": "023c18cbdb30ef89374cbbff40e8db4b.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 480,
+					"rotationCenterY": 360
+				},
+				{
+					"costumeName": "plan2",
+					"baseLayerID": 2,
+					"baseLayerMD5": "497fd907292a22cd3ceab8e306b90e40.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 480,
+					"rotationCenterY": 360
+				},
+				{
+					"costumeName": "plan3",
+					"baseLayerID": 3,
+					"baseLayerMD5": "8bda3da52095a18afd005b853c60fdcf.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 480,
+					"rotationCenterY": 360
+				},
+				{
+					"costumeName": "plan4",
+					"baseLayerID": 4,
+					"baseLayerMD5": "57ecff55d29869851445d95dfab7757e.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 480,
+					"rotationCenterY": 360
+				}],
+			"currentCostumeIndex": 3,
+			"scratchX": 0,
+			"scratchY": 0,
+			"scale": 1,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 1,
+			"visible": true,
+			"spriteInfo": {
+			}
+		},
+		{
+			"objName": "B",
+			"scripts": [[30, 25, [["whenGreenFlag"], ["gotoX:y:", 0, 0], ["hide"]]],
+				[29,
+					145,
+					[["whenIReceive", "B"],
+						["show"],
+						["lookLike:", "plan1"],
+						["wait:elapsed:from:", 2],
+						["lookLike:", "plan2"],
+						["wait:elapsed:from:", 1],
+						["stopScripts", "all"]]]],
+			"sounds": [{
+					"soundName": "pop",
+					"soundID": 1,
+					"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+					"sampleCount": 258,
+					"rate": 11025,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "plan1",
+					"baseLayerID": 5,
+					"baseLayerMD5": "1347b478a974c7f40282436e8610ca5b.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 480,
+					"rotationCenterY": 360
+				},
+				{
+					"costumeName": "plan2",
+					"baseLayerID": 6,
+					"baseLayerMD5": "96fc3a04bb3ab4a5a45b6a0e150c862a.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 480,
+					"rotationCenterY": 360
+				}],
+			"currentCostumeIndex": 1,
+			"scratchX": 0,
+			"scratchY": 0,
+			"scale": 1,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 2,
+			"visible": false,
+			"spriteInfo": {
+			}
+		},
+		{
+			"objName": "C",
+			"scripts": [[48, 34, [["whenGreenFlag"], ["gotoX:y:", 0, 0], ["hide"]]],
+				[46,
+					170,
+					[["whenIReceive", "C"],
+						["show"],
+						["lookLike:", "plan1"],
+						["wait:elapsed:from:", 1],
+						["lookLike:", "plan2"],
+						["wait:elapsed:from:", 1],
+						["call", "Faire Choix"]]],
+				[301,
+					52,
+					[["procDef", "Faire Choix", [], [], false],
+						["doAsk", "Que fais-tu ?"],
+						["doIf", ["=", ["answer"], "1"], [["broadcast:", "D"], ["hide"]]],
+						["doIf", ["=", ["answer"], "2"], [["broadcast:", "E"], ["hide"]]]]]],
+			"sounds": [{
+					"soundName": "meow",
+					"soundID": 0,
+					"md5": "83c36d806dc92327b9e7049a565c6bff.wav",
+					"sampleCount": 18688,
+					"rate": 22050,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "plan1",
+					"baseLayerID": 7,
+					"baseLayerMD5": "ad07b3e8c9ef0c70be85a79dff0c4ac8.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 480,
+					"rotationCenterY": 360
+				},
+				{
+					"costumeName": "plan2",
+					"baseLayerID": 8,
+					"baseLayerMD5": "e4b56acaf3961e2e8329d1229cd76592.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 480,
+					"rotationCenterY": 360
+				}],
+			"currentCostumeIndex": 1,
+			"scratchX": 0,
+			"scratchY": 0,
+			"scale": 1,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 3,
+			"visible": false,
+			"spriteInfo": {
+			}
+		}],
+	"info": {
+		"scriptCount": 7,
+		"hasCloudData": false,
+		"userAgent": "Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:44.0) Gecko\/20100101 Firefox\/44.0",
+		"projectID": "100942161",
+		"spriteCount": 3,
+		"swfVersion": "v444.1",
+		"videoOn": false,
+		"flashVersion": "LNX 20,0,0,306"
+	}
+}
